@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs') %>
+<%- include ('partials/content.ejs') %>
+ 
+ <!--main content--> 
+    <main class="container">
+        <div class="jumbotron">
+          
+          <h1 class="display-4">Welcome to the <%= title %> page</h1>
+          
+          <div style="padding-top: 20px;">
+            <fieldset>
+              <form onsubmit="confirmInput()" action="/"><a><img src="Assets/images/contactimage.jpg" alt = "me" width="400" height="400" style="float:right"></a>
+                  <label for="fname">First name:</label>
+                  <input type="text" id="fname" name="fname"><br><br>
+                  <label for="lname">Last name:</label>
+                  <input type="text" id="lname" name="lname"><br><br>
+                  <label for="lname">Your Contact Number:</label>
+                  <input type="text" id="lname" name="lname"><br><br>
+                  <p>
+                    Send me <span style="color:rgba(0, 0, 0, 0.719); font-weight:bold">message </span>if you like.<br><br>
+                    <textarea rows="10"cols="45" name="comment" placeholder="I want to visit the current listing..." ></textarea>
+                  </p>
+                  <input type="submit"><br><br>
+                  
+                  <a href="mailto: patricklmm7@gmail.com"><div id="email"><p>Click here to email me </p></div></a>
+               
+                </form>
+            </fieldset>
+          </div>
+      </main>
+
+<%- include ('partials/footer.ejs') %>  

@@ -1,0 +1,17 @@
+body{
+    background:#ccccb2;
+    font-size: large;
+  }
+
+  form{
+    padding: 50px 20px;
+}
+
+fieldset{
+    border: solid;
+    width: 900px;
+}
+
+#email{
+    color: #6226b6;
+}
