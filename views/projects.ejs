@@ -4,8 +4,29 @@
    <!--main content--> 
     <main class="container">
         <div class="jumbotron">
-          <h1 class="display-4">Welcome to the <%= title %> page</h1>
+
+          <h1 class="display-4">Welcome to my <%= title %> page</h1><br>
+          <fieldset id="project1">
+            <p><a><img src="Assets/images/Project1.jpg" alt = "FirstProject" width="1000" height="600" style="float:center"></a><br><br>
+            <i> The above project is done in COMP 225 last semester, and it shows you how the cooking app class diagram should run. Each class is linked up between each other to form the relationships.</i> </p>
+          </fieldset>
+
+            <br><br><br>
+
+          <fieldset id="project2">
+            <p><a><img src="Assets/images/Project2.jpeg" alt = "SecondProject" width="1000" height="600" style="float:center"></a><br><br>
+            <i>The above project is done in COMP 122 last semester, and it shows you how the ERD diagram should look like. Each entity contains primary key and also state the relationships.</i> </p>
+          </fieldset>
+
+            <br><br><br>
           
+        <fieldset id="project3">
+            <p><img src="Assets/images/Project3.png" alt = "ThirdProject" width="1000" height="600" style="float:center"></a><br><br>
+            <i>The above project is done in COMP 246 this semester, and it shows you how the GANTT chart should look like. Each task are given date from start to finish. </i></p>        
+        </fieldset>
+
+            <br><br><br>
+
         </div>
       </main>
 <%- include ('partials/footer.ejs') %>    

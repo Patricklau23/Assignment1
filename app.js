@@ -1,7 +1,6 @@
 // Access all the third party packages
 let express = require('express');
 let indexRouter = require('./routes/index');
-let logger = require('morgan');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 const { get } = require('jquery');
@@ -14,10 +13,6 @@ let app = express();
 app.set('view engine','ejs'); 
 app.set('views', path.join(__dirname, 'views'));
 
-//use express app functions
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
 
 //use everything under public folder & node modules folder. 
 app.use(express.static(path.join(__dirname, 'public')));

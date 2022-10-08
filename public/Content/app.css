@@ -3,7 +3,7 @@ body{
     font-size: large;
   }
 
-  form{
+form{
     padding: 50px 20px;
 }
 
@@ -15,3 +15,26 @@ fieldset{
 #email{
     color: #6226b6;
 }
+
+nav li{
+    font-size: 30px;
+}
+
+#project1{
+    border:solid;
+    width: 1005px;;
+    height: auto;
+}
+
+#project2{
+    border:solid;
+    width: 1005px;;
+    height: auto;
+}
+
+#project3{
+    border:solid;
+    width: 1005px;;
+    height: auto;
+}
+
