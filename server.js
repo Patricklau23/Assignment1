@@ -1,10 +1,14 @@
 #!/usr/bin/env node
+/*File name:server.js
+Student name: Pak Tak Lau 
+Student ID: 301224147   
+Date: 19 Oct 2022*/
 
 /**
  * Module dependencies.
  */
 
-let app = require('./app');
+let app = require('./config/app');
 let debug = require('debug')('http');
 let http = require('http');
  
