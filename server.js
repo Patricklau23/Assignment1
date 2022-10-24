@@ -16,7 +16,7 @@ let http = require('http');
   * Get port from environment and store in Express.
   */
  //The port can be adjusted to other value here, i use 5000 here, if 3000, this will be showing already in use 
- let port = normalizePort(process.env.PORT || '5000');
+ let port = normalizePort(process.env.PORT || '3000');
  app.set('port', port);
  
  /**
