@@ -1,4 +1,4 @@
-/*File name:users.js
+/*File name:routes/users.js
 Student name: Pak Tak Lau 
 Student ID: 301224147   
 Date: 19 Oct 2022*/

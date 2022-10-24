@@ -1,3 +1,8 @@
+/*File name:/controllers/index.js
+Student name: Pak Tak Lau 
+Student ID: 301224147   
+Date: 19 Oct 2022*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -11,6 +16,7 @@ let DB = require('../config/db');
 let userModel = require('../models/user');
 let User = userModel.User; // alias
 
+//These are the extension render from index routers
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 }
@@ -116,14 +122,14 @@ module.exports.processRegisterPage = (req, res, next) => {
     User.register(newUser, req.body.password, (err) => {
         if(err)
         {
-            console.log("Error: Inserting New User");
+            console.log("Error: Please insert the new user");
             if(err.name == "UserExistsError")
             {
                 req.flash(
                     'registerMessage',
-                    'Registration Error: User Already Exists!'
+                    'Registration Error: User Exists Already!'
                 );
-                console.log('Error: User Already Exists!')
+                console.log('Error: User Exists Already!')
             }
             return res.render('auth/register',
             {

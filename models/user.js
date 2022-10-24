@@ -1,8 +1,7 @@
-/*File name:user.js
+/*File name:models/user.js
 Student name: Pak Tak Lau 
 Student ID: 301224147   
 Date: 19 Oct 2022*/
-
 
 
 // require modules for the User Model
@@ -19,6 +18,7 @@ let User = mongoose.Schema
             trim: true,
             required: 'username is required'
         },
+        //user login password should be private and protected, so we don't model
         /*
         password: 
         {
