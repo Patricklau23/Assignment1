@@ -18,6 +18,7 @@ let User = userModel.User; // alias
 
 //These are the extension render from index routers
 module.exports.displayHomePage = (req, res, next) => {
+    //if displayname is string, else the displayname is empty (need to specify '')
     res.render('index', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 }
 
@@ -161,7 +162,7 @@ module.exports.performLogout = (req, res, next) => {
         req.logOut(function(err){
             if(err)
             {
-                next(err);  //If erro, Pass error to Express to handle 
+                next(err);  //If error, Pass error to Express to handle 
             }
             else{
                 res.redirect("login")  

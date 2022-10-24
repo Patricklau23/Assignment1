@@ -28,7 +28,12 @@ let flash = require('connect-flash');
 let mongoose = require('mongoose');
 let DB = require('./db');
 
-// point mongoose to the DB URI
+//routes setup
+let indexRouter = require('../routes/index');
+let usersRouter = require('../routes/users');
+let booksRouter = require('../routes/book');
+
+// point mongoose to the DB URI - local and global 
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let mongoDB = mongoose.connection;
@@ -37,9 +42,6 @@ mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB...');
 });
 
-let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
-let booksRouter = require('../routes/book');
 
 let app = express();
 
@@ -56,8 +58,12 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 //setup express session
-//session data will be stored in server side, whereas cookie only store session ID
-//the session can shift URL database to mongo shell database
+//cookie only store session ID
+// User login ->
+//  save the user information in the session store (mongo) on the server side and generate the session ID ->
+//  store the user session ID in the browser's cookie -> 
+//  User Login -> see if the session ID in the cookie and the server side is matching or not -> 
+//  if they are the same, the user information will be returned, and if they are different, the user will not be allowed to enter the page.
 app.use(session({
   secret: "SomeSecret",
   saveUninitialized: false,
@@ -100,9 +106,10 @@ let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
 
 passport.use(strategy);
 
-// routing
+//routing
 app.use('/', indexRouter);
 app.use('/book-list', booksRouter);
+app.use('/users',usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
