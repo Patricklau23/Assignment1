@@ -23,7 +23,7 @@ module.exports.displayBookList = (req, res, next) => {
         else
         {
             res.render('book/list', 
-            {title: 'Business Contact List',
+            {title: 'Business Contact View',
             //used in list.ejs page
             BookList: bookList, 
             displayName: req.user ? req.user.displayName : ''});      
