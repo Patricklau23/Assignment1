@@ -15,6 +15,7 @@ let cors = require('cors');
 let session = require('express-session');
 let passport = require('passport');
 
+//Json Web Token for authentication
 let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
 let ExtractJWT = passportJWT.ExtractJwt;
