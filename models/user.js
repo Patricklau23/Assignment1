@@ -19,15 +19,15 @@ let User = mongoose.Schema
             required: 'username is required'
         },
         //user login password should be private and protected, so we don't model
-        /*
+        
         password: 
         {
             type: String,
-            default: '';
+            default: '',
             trim: true,
             required: 'password is required'
-        }
-        */
+        },
+        
        email: 
        {
             type: String,
